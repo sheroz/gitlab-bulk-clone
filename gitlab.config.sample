@@ -1,0 +1,29 @@
+[Config]
+
+### Url of the gitlab server
+Url = https://gitlab.com
+
+### AccessToken to the gitlab server 
+AccessToken = your_access_token
+
+### GroupName is the name of the group to start cloning
+GroupName = mygroup
+
+### GroupId specifies the group id to start cloning, overrides the GroupName parameter
+### Useful when there are multiple groups have the same name in the tree 
+# GroupId = 0
+
+### Recursive specifies if subgroups should be processed
+Recursive = True
+
+### LocalPath specifies a local path to clone repos
+LocalPath = /projects/mygroup
+
+### AlwaysClone specifies if the local repo should be removed and fresh clone a repo
+### NOT SUPPORTED YET
+#AlwaysClone = True
+
+### PullBranch specifies a branch that should be pulled if repo already exists locally
+### NOT SUPPORTED YET
+#PullBranch = master
+
