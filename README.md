@@ -1,6 +1,6 @@
 # gitlab-bulk-clone
 
-Locally synchronizes all projects in the given GitLab group 
+Bulk clones all repos in the given GitLab group. Supports recursive groups 
 
 ## Create a configuration
 
