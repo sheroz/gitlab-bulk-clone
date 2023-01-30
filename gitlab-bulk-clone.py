@@ -18,7 +18,11 @@ def repo_pull(repo):
 
 def repo_clone(repo):
     print("Cloning repository: ", repo.name_with_namespace)
-    command = f'git clone {repo.ssh_url_to_repo}'
+    http_url_to_repo = repo.http_url_to_repo
+    print(http_url_to_repo)
+    prefix_https = http_url_to_repo[:8]
+    http_url = http_url_to_repo.replace(prefix_https, f'{prefix_https}{config_git_user}:{config_access_token}@') 
+    command = f'git clone {http_url}'
     process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
     output, _ = process.communicate()
     process.wait()
@@ -56,6 +60,7 @@ parser.read('gitlab.config')
 
 config = parser['Config']
 config_url = config.get('Url', fallback=None)
+config_git_user = config.get('Username', fallback=None)
 config_access_token = config.get('AccessToken', fallback=None)
 config_group_name = config.get('GroupName', fallback=None)
 config_group_id = config.getint('GroupId', fallback=0)

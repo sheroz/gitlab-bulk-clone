@@ -3,8 +3,11 @@
 ### Url of the gitlab server
 Url = https://gitlab.com
 
-### AccessToken to the gitlab server 
-AccessToken = your_access_token
+### Git username
+Username = git_username 
+
+### Git access token
+AccessToken = git_access_token
 
 ### GroupName is the name of the group to start cloning
 GroupName = mygroup
